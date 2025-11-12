@@ -16,6 +16,7 @@ import problemIllustration from './assets/problem-illustration.png'
 import solutionIllustration from './assets/solution-illustration.png'
 import transformationIllustration from './assets/transformation-illustration.png'
 import ebookCover from './assets/ebook-cover.png'
+import qrCodeAsset from './assets/qrcode-pix.png'
 import './App.css'
 
 function App() {
@@ -35,8 +36,8 @@ function App() {
   const pixCode = "bd087eb9-ca8d-452c-ba4f-Od49282bbe5e"
   const pixLink = "https://pix.example.com/pay/abc123"
   const mercadoPagoLink = "https://mpago.la/2XrXfQB"
-  // QR Code PIX - Substitua pela URL real da imagem do QR Code
-  const qrCodeImage = "https://via.placeholder.com/300x300/FFFFFF/000000?text=QR+CODE+PIX"
+  // QR Code PIX - agora usa asset local
+  const qrCodeImage = qrCodeAsset
   const emailSergio = "contato@sergiodiasfilho.com"
   const whatsappNumber = "+554497164827"
 
@@ -473,341 +474,219 @@ function App() {
               Não deixe para amanhã a oportunidade de descobrir os segredos para uma vida plena e com propósito.
             </p>
             
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-10 md:p-12 lg:p-14 mb-12 border-2 border-white/20 shadow-2xl max-w-2xl mx-auto">
-              <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 opacity-90">De R$ 97,00 por apenas</div>
-              <div className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold mb-5 bg-gradient-to-r from-white to-amber-100 bg-clip-text text-transparent">
-                R$ 47,00
-              </div>
-              <div className="text-lg md:text-xl lg:text-2xl opacity-90 flex items-center justify-center gap-2">
-                <Clock className="w-5 h-5 lg:w-6 lg:h-6" />
-                Oferta por tempo limitado
-              </div>
-            </div>
-            
-            <Button 
-              size="lg" 
-              className="bg-white text-amber-600 hover:bg-gray-50 px-12 md:px-16 lg:px-20 py-6 md:py-7 lg:py-8 text-xl md:text-2xl font-bold shadow-2xl hover:shadow-white/50 transition-all duration-300 transform hover:scale-110 rounded-2xl mb-12 lg:mb-14"
-              onClick={() => setIsModalOpen(true)}
-            >
-              <Gift className="w-7 h-7 mr-3" />
-              Garantir Meu Exemplar Agora
-              <ArrowRight className="w-7 h-7 ml-3" />
-            </Button>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 text-sm md:text-base max-w-4xl mx-auto">
-              {[
-                { icon: <Download className="w-6 h-6 lg:w-7 lg:h-7" />, text: "Download Imediato" },
-                { icon: <Award className="w-6 h-6 lg:w-7 lg:h-7" />, text: "Garantia de 30 dias" },
-                { icon: <MessageCircle className="w-6 h-6 lg:w-7 lg:h-7" />, text: "Suporte completo" }
-              ].map((item, index) => (
-                <div key={index} className="flex flex-col items-center gap-4 bg-white/10 backdrop-blur-sm rounded-xl p-6 lg:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-white">{item.icon}</div>
-                  <span className="font-semibold text-base lg:text-lg">{item.text}</span>
+            <div className="relative max-w-2xl mx-auto">
+              {/* Caixa de preço com z-base */}
+              <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 md:p-10 lg:p-12 mb-6 border-2 border-white/20 shadow-2xl z-10 relative">
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 opacity-90">De R$ 97,00 por apenas</div>
+                <div className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 bg-gradient-to-r from-white to-amber-100 bg-clip-text text-transparent">
+                  R$ 47,00
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
-
-      {/* Footer Melhorado */}
-      <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-12 xl:px-20 border-t-4 border-amber-600">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16 mb-10">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-amber-600 rounded-xl flex items-center justify-center">
-                  <BookOpen className="w-7 h-7 text-white" />
+                <div className="text-lg md:text-xl lg:text-2xl opacity-90 flex items-center justify-center gap-2">
+                  <Clock className="w-5 h-5 lg:w-6 lg:h-6" />
+                  Oferta por tempo limitado
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-amber-400">Manual da Vida Moderna</h3>
               </div>
-              <p className="text-gray-300 text-sm md:text-base mb-4 leading-relaxed">
-                Uma adaptação da Bíblia para os desafios do século XXI
-              </p>
-              <p className="text-xs md:text-sm text-gray-400">
-                © 2024 Sérgio Dias Filho & Yan Menephyl Works. Todos os direitos reservados.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="text-xl font-bold mb-6 text-amber-400 flex items-center gap-2">
-                <Users className="w-5 h-5" />
-                Sobre Nós
-              </h4>
-              <div className="space-y-4">
-                <a 
-                  href="https://www.instagram.com/sergiodiasfilho/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-300 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 group"
-                >
-                  <div className="w-10 h-10 bg-gradient-to-br from-amber-600 to-amber-700 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Instagram className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="font-semibold">Sérgio Dias Filho</span>
-                  <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-                <a 
-                  href="https://www.instagram.com/yan_menephyl_works/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-300 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 group"
-                >
-                  <div className="w-10 h-10 bg-gradient-to-br from-amber-600 to-amber-700 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Instagram className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="font-semibold">Yan Menephyl Works</span>
-                  <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="text-xl font-bold mb-6 text-amber-400 flex items-center gap-2">
-                <MessageCircle className="w-5 h-5" />
-                Contato
-              </h4>
-              <div className="space-y-4">
-                <a 
-                  href="https://www.instagram.com/sergiodiasfilho/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-300 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 group"
-                >
-                  <div className="w-10 h-10 bg-gradient-to-br from-pink-600 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Instagram className="w-5 h-5 text-white" />
-                  </div>
-                  <span>Instagram</span>
-                  <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-                <a 
-                  href="https://www.facebook.com/menephyl.settings" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-300 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 group"
-                >
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Facebook className="w-5 h-5 text-white" />
-                  </div>
-                  <span>Facebook</span>
-                  <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-                <a 
-                  href={`mailto:${emailSergio}`}
-                  className="flex items-center gap-3 text-gray-300 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 group"
-                >
-                  <div className="w-10 h-10 bg-gradient-to-br from-red-600 to-red-700 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Mail className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="text-sm break-all">{emailSergio}</span>
-                </a>
-                <a 
-                  href={`https://wa.me/${whatsappNumber.replace(/\D/g, '')}`}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-300 hover:text-amber-400 transition-all duration-300 hover:translate-x-2 group"
-                >
-                  <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <MessageCircle className="w-5 h-5 text-white" />
-                  </div>
-                  <span>+55 44 9716-4827</span>
-                  <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-700 pt-8 mt-8 text-center">
-            <p className="text-sm md:text-base text-gray-400 flex items-center justify-center gap-2">
-              Desenvolvido com <Heart className="w-4 h-4 text-red-500 fill-current" /> por Yan Menephyl Works
-            </p>
-          </div>
-        </div>
-      </footer>
 
-      {/* Modal de Pagamento Melhorado */}
+              {/* Botão centralizado abaixo da caixa de preço, com z acima */}
+              <div className="mt-6 z-20 relative flex justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-black text-white hover:bg-gray-900 px-12 md:px-16 lg:px-20 py-4 md:py-5 text-xl md:text-2xl font-bold shadow-2xl hover:shadow-black/40 transition-all duration-300 transform hover:scale-105 rounded-2xl"
+                  onClick={() => setIsModalOpen(true)}
+                >
+                  <Gift className="w-6 h-6 mr-3" />
+                  Garantir Meu Exemplar Agora
+                  <ArrowRight className="w-6 h-6 ml-3" />
+                </Button>
+              </div>
+            </div>
+            
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 text-sm md:text-base max-w-4xl mx-auto mt-12">
+                    <div className="flex flex-col items-center gap-2 bg-white/10 px-4 py-3 rounded-lg backdrop-blur-sm">
+                      <CheckCircle className="w-6 h-6" />
+                      <span>Acesso Imediato</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 bg-white/10 px-4 py-3 rounded-lg backdrop-blur-sm">
+                      <Download className="w-6 h-6" />
+                      <span>Download em PDF</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-2 bg-white/10 px-4 py-3 rounded-lg backdrop-blur-sm">
+                      <Award className="w-6 h-6" />
+                      <span>Garantia de Satisfação</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </ScrollReveal>
+
+      {/* Modal de Pagamento */}
       {isModalOpen && (
-        <div 
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-in fade-in duration-300"
+        <div
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50"
           onClick={(e) => e.target === e.currentTarget && setIsModalOpen(false)}
         >
-          <div className="bg-white rounded-3xl p-6 md:p-10 max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-in zoom-in-95 duration-300 border-4 border-amber-200">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 flex-1 text-center">Adquira Seu Exemplar</h3>
+          <div className="bg-white rounded-3xl p-6 md:p-10 max-w-md w-full max-h-[90vh] overflow-y-auto shadow-2xl border-4 border-amber-200">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-2xl font-bold text-gray-900 text-center flex-1">Adquirir Manual da Vida Moderna</h3>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors ml-4"
+                className="p-2 rounded-full hover:bg-gray-100 transition-colors ml-4"
                 aria-label="Fechar"
               >
                 <X className="w-6 h-6 text-gray-600" />
               </button>
             </div>
-            
-            <div className="mb-8 text-center bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-6 border-2 border-amber-200">
-              <div className="text-4xl md:text-5xl font-extrabold text-amber-600 mb-2">R$ 47,00</div>
-              <p className="text-gray-600 text-base md:text-lg font-semibold">Pagamento único • Acesso vitalício</p>
+
+            {/* Seleção de método */}
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              <button
+                onClick={() => setPaymentMethod('pix')}
+                className={`p-4 rounded-2xl border transition-all duration-200 text-center ${
+                  paymentMethod === 'pix' ? 'border-amber-600 bg-amber-50 text-amber-700 shadow-lg' : 'border-gray-200 bg-white'
+                }`}
+              >
+                <QrCode className="w-6 h-6 mx-auto mb-2" />
+                <div className="font-semibold">PIX</div>
+              </button>
+
+              <button
+                onClick={() => setPaymentMethod('card')}
+                className={`p-4 rounded-2xl border transition-all duration-200 text-center ${
+                  paymentMethod === 'card' ? 'border-amber-600 bg-amber-50 text-amber-700 shadow-lg' : 'border-gray-200 bg-white'
+                }`}
+              >
+                <CreditCard className="w-6 h-6 mx-auto mb-2" />
+                <div className="font-semibold">Cartão</div>
+              </button>
             </div>
 
-            {/* Seleção de Método de Pagamento */}
-            <div className="mb-6">
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                <button
-                  onClick={() => setPaymentMethod('pix')}
-                  className={`p-4 rounded-2xl border-3 transition-all duration-300 ${
-                    paymentMethod === 'pix'
-                      ? 'border-amber-600 bg-gradient-to-br from-amber-50 to-amber-100 text-amber-700 shadow-lg scale-105'
-                      : 'border-gray-200 hover:border-gray-300 bg-white hover:bg-gray-50'
-                  }`}
-                >
-                  <QrCode className={`w-8 h-8 mx-auto mb-2 ${paymentMethod === 'pix' ? 'text-amber-600' : 'text-gray-400'}`} />
-                  <span className="text-sm font-bold">PIX</span>
-                  {paymentMethod === 'pix' && (
-                    <div className="mt-2 text-xs text-amber-600 font-semibold">Desconto aplicado</div>
-                  )}
-                </button>
-                <button
-                  onClick={() => setPaymentMethod('card')}
-                  className={`p-4 rounded-2xl border-3 transition-all duration-300 ${
-                    paymentMethod === 'card'
-                      ? 'border-amber-600 bg-gradient-to-br from-amber-50 to-amber-100 text-amber-700 shadow-lg scale-105'
-                      : 'border-gray-200 hover:border-gray-300 bg-white hover:bg-gray-50'
-                  }`}
-                >
-                  <CreditCard className={`w-8 h-8 mx-auto mb-2 ${paymentMethod === 'card' ? 'text-amber-600' : 'text-gray-400'}`} />
-                  <span className="text-sm font-bold">Cartão</span>
-                  <div className="mt-2 text-xs text-gray-500">Parcelamento</div>
-                </button>
-              </div>
+            {/* Conteúdo PIX / Cartão */}
+            {paymentMethod === 'pix' ? (
+              <div className="space-y-4 text-center">
+                <p className="text-sm font-semibold text-gray-700">Escaneie ou copie o código PIX abaixo</p>
 
-              {/* Conteúdo PIX */}
-              {paymentMethod === 'pix' && (
-                <div className="space-y-6 animate-in slide-in-from-top duration-300">
-                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-5 rounded-2xl border-2 border-gray-200">
-                    <p className="text-sm font-bold mb-3 text-gray-700 flex items-center gap-2">
-                      <QrCode className="w-5 h-5" />
-                      Código PIX:
-                    </p>
-                    <div className="flex items-center gap-3 bg-white p-4 rounded-xl border-2 border-gray-300">
-                      <code className="text-xs flex-1 break-all font-mono text-gray-800">{pixCode}</code>
-                      <button
-                        onClick={() => copyToClipboard(pixCode)}
-                        className="p-3 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition-all duration-300 hover:scale-110 shadow-md"
-                        title="Copiar código"
-                      >
-                        <Copy className="w-5 h-5" />
-                      </button>
-                    </div>
-                    {copied && (
-                      <div className="mt-3 p-3 bg-green-100 border-2 border-green-500 rounded-xl animate-in slide-in-from-top">
-                        <p className="text-green-700 text-sm font-semibold flex items-center gap-2">
-                          <CheckCircle className="w-5 h-5" />
-                          Código copiado com sucesso!
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                  
-                  <div className="text-center space-y-4">
-                    <p className="text-base font-bold mb-5 text-gray-700 flex items-center justify-center gap-2">
-                      <QrCode className="w-5 h-5 text-amber-600" />
-                      Ou escaneie o QR Code:
-                    </p>
-                    <div className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl border-4 border-amber-300 inline-block shadow-2xl">
-                      <div className="bg-white p-4 rounded-2xl border-2 border-gray-200">
-                        <img 
-                          src={qrCodeImage} 
-                          alt="QR Code PIX - Sérgio Dias Filho" 
-                          className="w-64 h-64 mx-auto"
-                          onError={(e) => {
-                            e.target.src = "https://via.placeholder.com/300x300/FFFFFF/000000?text=QR+CODE+PIX"
-                          }}
-                        />
-                      </div>
-                      <div className="mt-4 text-center space-y-1">
-                        <p className="text-xs font-semibold text-gray-600">Empresa: 52 777 435 SERGIO DIAS FILHO</p>
-                        <p className="text-xs font-semibold text-gray-600">Instituição: NU PAGAMENTOS - IP</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="text-center">
-                    <a
-                      href={pixLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-amber-600 hover:text-amber-700 font-bold text-base transition-colors"
-                    >
-                      Pagar com PIX via Link
-                      <ExternalLink className="w-5 h-5" />
-                    </a>
-                  </div>
+                <div className="bg-gradient-to-br from-white to-gray-50 p-4 rounded-2xl inline-block shadow-lg border border-amber-200">
+                  <img
+                    src={qrCodeAsset}
+                    alt="QR Code PIX"
+                    className="w-56 h-56 md:w-64 md:h-64 object-contain mx-auto"
+                    onError={(e) => { e.target.src = '/assets/qrcode-pix.png' }}
+                  />
                 </div>
-              )}
 
-              {/* Conteúdo Cartão */}
-              {paymentMethod === 'card' && (
-                <div className="space-y-6 animate-in slide-in-from-top duration-300">
-                  <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-100 p-8 rounded-2xl text-center border-2 border-blue-200">
-                    <CreditCard className="w-16 h-16 mx-auto mb-4 text-blue-600" />
-                    <p className="text-base text-gray-700 mb-6 font-semibold leading-relaxed">
-                      Pague com cartão de crédito de forma 100% segura através do Mercado Pago
-                    </p>
-                    <a
-                      href={mercadoPagoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
-                    >
-                      <CreditCard className="w-6 h-6" />
-                      Pagar com Cartão
-                      <ExternalLink className="w-6 h-6" />
-                    </a>
-                  </div>
-                  <div className="bg-green-50 border-2 border-green-200 rounded-xl p-4">
-                    <p className="text-xs text-gray-600 text-center font-semibold">
-                      ✅ Aceitamos todos os cartões de crédito • Parcelamento em até 12x
-                    </p>
-                  </div>
+                <div className="bg-gray-50 p-3 rounded-lg border border-gray-200 text-left break-words">
+                  <div className="text-xs text-gray-500 mb-1">Código PIX (provisório)</div>
+                  <pre className="text-sm font-mono text-gray-800 whitespace-pre-wrap">{pixCode}</pre>
                 </div>
-              )}
-            </div>
 
-            <div className="border-t-2 border-gray-200 pt-6 mt-6 space-y-4">
-              <div className="bg-amber-50 border-2 border-amber-200 rounded-xl p-4">
-                <p className="text-xs md:text-sm text-gray-700 text-center leading-relaxed">
-                  <Clock className="w-4 h-4 inline mr-2" />
-                  Após o pagamento, você receberá o e-book por email em até 24 horas.
-                </p>
+                <div className="flex gap-3 justify-center">
+                  <button
+                    onClick={() => copyToClipboard(pixCode)}
+                    className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-900 transition-colors"
+                  >
+                    <Copy className="w-4 h-4" />
+                    {copied ? 'Copiado' : 'Copiar PIX'}
+                  </button>
+
+                  <a
+                    href={pixLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 border border-amber-200 bg-white text-amber-600 px-4 py-2 rounded-lg font-semibold hover:shadow-sm"
+                  >
+                    Abrir Link PIX
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+
+                <div className="text-xs text-gray-500 mt-2">Empresa: SERGIO DIAS FILHO • Instituição: NU PAGAMENTOS</div>
               </div>
-              
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button 
-                  onClick={() => setIsModalOpen(false)}
-                  className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 rounded-xl transition-all duration-300"
-                >
-                  Fechar
-                </Button>
+            ) : (
+              <div className="space-y-4 text-center">
+                <p className="text-base font-semibold text-gray-800">Pagamento por cartão (integração externa)</p>
+                <p className="text-sm text-gray-600">Será redirecionado para a página de pagamento segura.</p>
                 <a
-                  href={`https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=Olá! Gostaria de saber mais sobre o Manual da Vida Moderna.`}
+                  href={mercadoPagoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1"
+                  className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-900 transition-colors"
                 >
-                  <Button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
-                    <MessageCircle className="w-5 h-5 mr-2" />
-                    Falar no WhatsApp
-                  </Button>
+                  Outras formas de pagamento
+                  <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
+            )}
+
+            <div className="mt-6 flex gap-3">
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 rounded-xl transition-colors"
+              >
+                Fechar
+              </button>
+              <a
+                href={`https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=Olá!%20Quero%20adquirir%20o%20Manual%20da%20Vida%20Moderna.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1"
+              >
+                <button className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl">
+                  <MessageCircle className="w-5 h-5 inline-block mr-2" />
+                  Falar no WhatsApp
+                </button>
+              </a>
             </div>
           </div>
         </div>
       )}
 
-      {/* Botão Flutuante WhatsApp */}
+      {/* Footer */}
+      <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-12 md:py-16 px-4 sm:px-6 lg:px-12 xl:px-20 border-t-4 border-amber-600 mt-12">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center">
+                  <BookOpen className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-2xl font-bold">Manual da Vida Moderna</h4>
+                  <p className="text-gray-400 text-sm">Uma adaptação da Bíblia para os desafios do século XXI</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h5 className="text-lg font-semibold text-amber-400 mb-3">Sobre Nós</h5>
+              <ul className="text-gray-300 text-sm space-y-2">
+                <li>Sérgio Dias Filho</li>
+                <li>Yan Menephyl Works</li>
+              </ul>
+            </div>
+
+            <div>
+              <h5 className="text-lg font-semibold text-amber-400 mb-3">Contato</h5>
+              <ul className="text-gray-300 text-sm space-y-2">
+                <li>{emailSergio}</li>
+                <li>{whatsappNumber}</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-700 pt-6 mt-6 text-center">
+            <p className="text-sm md:text-base text-gray-400 flex items-center justify-center gap-2">
+              Desenvolvido com <Heart className="w-4 h-4 text-red-500" /> por Sérgio Dias Filho e Yan Menephyl Works
+            </p>
+          </div>
+        </div>
+      </footer>
+
+      {/* Botão flutuante/aux */}
       <WhatsAppButton />
+
     </div>
   )
 }
 
 export default App
+
